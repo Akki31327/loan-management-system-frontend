@@ -9,11 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 
 function Loans() {
 
-  /*
-  |--------------------------------------------------------------------------
-  | STATES
-  |--------------------------------------------------------------------------
-  */
+
 
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
@@ -23,11 +19,10 @@ function Loans() {
   const [showModal, setShowModal] = useState(false);
   const [editData, setEditData] = useState(null);
 
-  /*
-  |--------------------------------------------------------------------------
-  | API CALL (WITH PAGINATION)
-  |--------------------------------------------------------------------------
-  */
+
+
+  // API CALL (WITH PAGINATION)
+
 
   const {
     data,
@@ -39,19 +34,15 @@ function Loans() {
     [search, status, page]
   );
 
-  /*
-  |--------------------------------------------------------------------------
-  | DELETE HOOK
-  |--------------------------------------------------------------------------
-  */
+ 
+  // DELETE HOOK
+
 
   const { deleteData } = useDelete();
 
-  /*
-  |--------------------------------------------------------------------------
-  | EXTRACT DATA
-  |--------------------------------------------------------------------------
-  */
+
+  // EXTRACT DATA
+
 
   const loans = data?.data || [];
 
@@ -60,11 +51,9 @@ function Loans() {
   const lastPage = pagination.last_page || 1;
   const currentPage = pagination.current_page || 1;
 
-  /*
-  |--------------------------------------------------------------------------
-  | HANDLE DELETE
-  |--------------------------------------------------------------------------
-  */
+ 
+  // HANDLE DELETE
+
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
@@ -85,11 +74,9 @@ function Loans() {
     }
   };
 
-  /*
-  |--------------------------------------------------------------------------
-  | PAGE CHANGE FIX
-  |--------------------------------------------------------------------------
-  */
+
+  // PAGE CHANGE FIX
+
 
   const changePage = (newPage) => {
     if (newPage < 1 || newPage > lastPage) return;

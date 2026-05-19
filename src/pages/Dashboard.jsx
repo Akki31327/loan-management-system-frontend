@@ -12,11 +12,9 @@ import useFetch from "../hooks/useFetch";
 
 function Dashboard() {
 
-  /*
-  |--------------------------------------------------------------------------
-  | FETCH DASHBOARD DATA
-  |--------------------------------------------------------------------------
-  */
+
+  // FETCH DASHBOARD DATA
+
 
   const { data, loading } =
     useFetch("/dashboard/summary");
@@ -24,11 +22,9 @@ function Dashboard() {
   const dashboard =
     data?.data || {};
 
-  /*
-  |--------------------------------------------------------------------------
-  | CHART DATA
-  |--------------------------------------------------------------------------
-  */
+
+  // CHART DATA
+
 
   const paymentModeData = [
 

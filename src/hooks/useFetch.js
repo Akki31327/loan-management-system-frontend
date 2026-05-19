@@ -10,11 +10,7 @@ function useFetch(url, dependencies = []) {
 
   const [error, setError] = useState(null);
 
-  /*
-  |--------------------------------------------------------------------------
-  | FETCH DATA
-  |--------------------------------------------------------------------------
-  */
+
 
   const fetchData = async () => {
 

@@ -8,11 +8,6 @@ function useUpdate() {
 
   const [error, setError] = useState(null);
 
-  /*
-  |--------------------------------------------------------------------------
-  | UPDATE DATA
-  |--------------------------------------------------------------------------
-  */
 
   const updateData = async (url, payload) => {
 

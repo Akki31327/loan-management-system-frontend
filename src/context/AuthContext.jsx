@@ -12,12 +12,8 @@ export const AuthProvider = ({ children }) => {
     localStorage.getItem("token")
   );
 
-  /*
-  |--------------------------------------------------------------------------
-  | LOGIN
-  |--------------------------------------------------------------------------
-  */
 
+  // LOGIN
   const login = (userData, tokenData) => {
 
     localStorage.setItem("user", JSON.stringify(userData));
@@ -29,12 +25,8 @@ export const AuthProvider = ({ children }) => {
     setToken(tokenData);
   };
 
-  /*
-  |--------------------------------------------------------------------------
-  | LOGOUT
-  |--------------------------------------------------------------------------
-  */
 
+  // LOGOUT
   const logout = () => {
 
     localStorage.removeItem("user");

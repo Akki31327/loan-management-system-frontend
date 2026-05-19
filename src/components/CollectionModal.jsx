@@ -14,11 +14,9 @@ function CollectionModal({
   user, // 👈 pass logged-in user
 }) {
 
-  /*
-  |--------------------------------------------------------------------------
-  | FETCH LOANS
-  |--------------------------------------------------------------------------
-  */
+
+  // FETCH LOANS
+
 
   const { data } = useFetch("/loans-all");
 
@@ -26,11 +24,7 @@ function CollectionModal({
     ? data.data
     : [];
 
-  /*
-  |--------------------------------------------------------------------------
-  | STATES
-  |--------------------------------------------------------------------------
-  */
+  
 
   const [pendingAmount, setPendingAmount] = useState(0);
 
@@ -43,11 +37,9 @@ function CollectionModal({
 
   const { loading } = usePost();
 
-  /*
-  |--------------------------------------------------------------------------
-  | FILL DATA WHEN EDIT
-  |--------------------------------------------------------------------------
-  */
+
+  // FILL DATA WHEN EDIT
+
 
   useEffect(() => {
     if (editData) {
@@ -71,11 +63,9 @@ function CollectionModal({
     }
   }, [editData]);
 
-  /*
-  |--------------------------------------------------------------------------
-  | HANDLE CHANGE
-  |--------------------------------------------------------------------------
-  */
+
+  // HANDLE CHANGE
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -96,11 +86,9 @@ function CollectionModal({
     }
   };
 
-  /*
-  |--------------------------------------------------------------------------
-  | SUBMIT (CREATE + UPDATE)
-  |--------------------------------------------------------------------------
-  */
+
+  // SUBMIT (CREATE + UPDATE)
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -132,11 +120,9 @@ function CollectionModal({
     }
   };
 
-  /*
-  |--------------------------------------------------------------------------
-  | DELETE (ADMIN ONLY)
-  |--------------------------------------------------------------------------
-  */
+
+  // DELETE (ADMIN ONLY)
+
 
   const handleDelete = async (id) => {
     if (user?.role !== "admin") {
